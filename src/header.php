@@ -27,13 +27,13 @@
 	<body <?php body_class(); ?>>
 
 		<!-- wrapper -->
-		<div class="wrapper">
+		<div class="container">
 
 			<!-- header -->
-			<header class="header clear" role="banner">
+			<header class="header clear navbar navbar-toggleable-md navbar-light bg-faded" role="banner">
 
 					<!-- logo -->
-					<div class="logo">
+					<div class="logo navbar-header">
 						<a href="<?php echo home_url(); ?>">
 							<!-- svg logo - toddmotto.com/mastering-svg-use-for-a-retina-web-fallbacks-with-png-script -->
 							<img src="<?php echo get_template_directory_uri(); ?>/img/logo.svg" alt="Logo" class="logo-img">
@@ -42,7 +42,10 @@
 					<!-- /logo -->
 
 					<!-- nav -->
-					<nav class="nav" role="navigation">
+					<nav class="collapse navbar-collapse" role="navigation">
+						<button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+							<span class="navbar-toggler-icon"></span>
+						</button>
 						<?php html5blank_nav(); ?>
 					</nav>
 					<!-- /nav -->

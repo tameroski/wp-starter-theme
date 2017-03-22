@@ -66,26 +66,16 @@ if (function_exists('add_theme_support'))
 \*------------------------------------*/
 
 // HTML5 Blank navigation
+require_once("modules/wp_bootstrap_navwalker.php");
 function html5blank_nav()
 {
-    wp_nav_menu(
-    array(
-        'theme_location'  => 'header-menu',
-        'menu'            => '',
-        'container'       => 'div',
-        'container_class' => 'menu-{menu slug}-container',
-        'container_id'    => '',
-        'menu_class'      => 'menu',
-        'menu_id'         => '',
-        'echo'            => true,
-        'fallback_cb'     => 'wp_page_menu',
-        'before'          => '',
-        'after'           => '',
-        'link_before'     => '',
-        'link_after'      => '',
-        'items_wrap'      => '<ul>%3$s</ul>',
-        'depth'           => 0,
-        'walker'          => ''
+    wp_nav_menu(array(
+        'theme_location'    => 'header-menu',
+        'echo'              => true,
+        'depth'             => 2,
+        'menu_class'        => 'nav navbar-nav',
+        'fallback_cb'       => 'wp_bootstrap_navwalker::fallback',
+        'walker'            => new wp_bootstrap_navwalker()
         )
     );
 }
@@ -105,6 +95,10 @@ function html5blank_header_scripts()
             // Modernizr
             wp_register_script('modernizr', get_template_directory_uri() . '/bower_components/modernizr/modernizr.js', array(), '2.8.3');
 
+            // Bootstrap
+            wp_register_script('tether', get_template_directory_uri() . '/bower_components/tether/dist/js/tether.js', array(), '1.4.0');
+            wp_register_script('bootstrap', get_template_directory_uri() . '/bower_components/bootstrap/dist/js/bootstrap.js', array(), '4.0.0');
+
             // Custom scripts
             wp_register_script(
                 'html5blankscripts',
@@ -112,7 +106,9 @@ function html5blank_header_scripts()
                 array(
                     'conditionizr',
                     'modernizr',
-                    'jquery'),
+                    'jquery',
+                    'tether',
+                    'bootstrap'),
                 '1.0.0');
 
             // Enqueue Scripts

@@ -9,6 +9,9 @@
 @import "modules/mixins";
 @import "modules/fonts";
 
+// Libs
+@import "../../bower_components/bootstrap/scss/bootstrap";
+
 // Partials
 @import "partials/reset";
 @import "partials/wordpress";

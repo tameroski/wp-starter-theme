@@ -13,6 +13,9 @@ var gulp = require( "gulp" ),
 		"src/js/lib/conditionizr-4.3.0.min.js",
 		/** jQuery */
 		"src/bower_components/jquery/dist/jquery.js",
+		/** Bootstrap */
+		"src/bower_components/tether/dist/js/tether.js",
+		"src/bower_components/bootstrap/dist/js/bootstrap.js",
 		/** Page scripts */
 		"src/js/scripts.js"
 	],

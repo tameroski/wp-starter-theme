@@ -3,8 +3,118 @@
  * ---
  */
 
-
 @mixin reset-box {
   padding: 0;
   margin: 0;
 }
+
+// Rem output with px fallback
+@mixin font-size($sizeValue: 1) {
+    font-size: ($sizeValue * 16) * 1px;
+    font-size: $sizeValue * 1rem;
+}
+@mixin line-height($sizeValue: 1) {
+    line-height: ($sizeValue * 16) * 1px;
+    line-height: $sizeValue * 1rem;
+}
+@mixin remprop($prop, $sizeValue: 1) {
+    #{$prop}: ($sizeValue * 16) * 1px;
+    #{$prop}: $sizeValue * 1rem;
+}
+
+// Center block
+@mixin center-block {
+	display: block;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+// Align the right way
+@mixin align($horizontal: true, $vertical: true) {
+  position: absolute;
+  @if ($horizontal and $vertical) {
+    top: 50%;
+    left: 50%;
+    @include transform(translate(-50%, -50%));
+  } @else if ($horizontal) {
+    left: 50%;
+    @include transform(translate(-50%, 0));
+  } @else if ($vertical) {
+    top: 50%;
+    @include transform(translate(0, -50%));
+  }
+}
+
+// HEX to RGBA
+@mixin background-opacity($color, $opacity: 0.3) {
+    background: $color;
+    background: rgba($color, $opacity);
+}
+
+// Color filter over div with image
+@mixin filter($opacity: 0.3, $background: #000) {
+  &:before {
+    position: absolute;
+    left: 0;
+    top: 0;
+    height: 100%;
+    width: 100%;
+    display: block;
+    content: " ";
+    background: $background;
+    opacity: $opacity;
+    transition: opacity 0.3s ease;
+  }
+}
+
+// Omega reset for Bourbon Neat
+@mixin omega-reset($nth) {
+  &:nth-child(#{$nth}) { margin-right: flex-gutter($grid-columns, $gutter); }
+  &:nth-child(#{$nth}+1) { clear: none }
+}
+
+// Wordpress image galleries
+@mixin gallery($nb-items: 1) {
+  .gallery-columns-#{$nb-items}{
+
+    $items-tablet: round($nb-items/2);
+    $items-mobile: round($nb-items/4);
+
+    .gallery-item{
+      display:block;
+      float:left;
+      margin: 0;
+      width:100/$nb-items * 1%;
+
+      &:nth-child(#{$nb-items}n + 1){
+        clear:both;
+      }
+
+      @include media($tablet) {
+        width:100/$items-tablet * 1%;
+
+        &:nth-child(#{$nb-items}n + 1){
+          clear:none;
+        }
+        &:nth-child(#{$items-tablet}n + 1){
+          clear:both;
+        }
+      }
+
+      @include media($mobile) {
+        width:100/$items-mobile * 1%;
+
+        &:nth-child(#{$nb-items}n + 1){
+          clear:none;
+        }
+        &:nth-child(#{$items-tablet}n + 1){
+          clear:none;
+        }
+        &:nth-child(#{$items-mobile}n + 1){
+          clear:both;
+        }
+      }
+    }
+  }
+}
+

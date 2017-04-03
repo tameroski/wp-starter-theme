@@ -6568,6 +6568,26 @@ input[type="search"] {
  * ---
  * Menus
  */
+.scene .scene-element {
+  animation-duration: 0.25s;
+  transition-timing-function: ease-in;
+  animation-fill-mode: both; }
+
+.scene .fadein {
+  animation-name: fadeIn; }
+
+.scene.is-exiting .scene-element {
+  animation-direction: alternate-reverse; }
+
+/*
+ * Keyframes
+ */
+@keyframes fadeIn {
+  0% {
+    opacity: 0; }
+  100% {
+    opacity: 1; } }
+
 /**
  * partials/sidebar
  * ---

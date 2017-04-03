@@ -103,6 +103,9 @@ function html5blank_header_scripts()
             wp_register_script('tether', get_template_directory_uri() . '/bower_components/tether/dist/js/tether.js', array(), '1.4.0');
             wp_register_script('bootstrap', get_template_directory_uri() . '/bower_components/bootstrap/dist/js/bootstrap.js', array(), '4.0.0');
 
+            // Libs
+            wp_register_script('smoothstate', get_template_directory_uri() . '/js/lib/jquery.smoothState.min.js', array('jquery'), '0.5.2');
+
             // Custom scripts
             wp_register_script(
                 'html5blankscripts',
@@ -112,7 +115,9 @@ function html5blank_header_scripts()
                     'modernizr',
                     'jquery',
                     'tether',
-                    'bootstrap'),
+                    'bootstrap',
+                    'smoothstate'
+                ),
                 $theme_version);
 
             // Enqueue Scripts

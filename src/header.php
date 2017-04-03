@@ -24,34 +24,38 @@
         </script>
 
 	</head>
-	<body <?php body_class(); ?>>
+	<body>
+
+		<div class="loading-overlay"></div>
 
 		<!-- wrapper -->
-		<div class="container">
+		<div id="page" class="container scene">
 
-			<!-- header -->
-			<header class="header clear" role="banner">
+			<div <?php body_class('scene-element fadein');?>>
 
-					<!-- nav -->
-					<nav class="navbar navbar-toggleable-md navbar-light bg-faded" role="navigation">
-						<button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#main-menu" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-							<span class="navbar-toggler-icon"></span>
-						</button>
+				<!-- header -->
+				<header class="header clear" role="banner">
 
-						<!-- logo -->
-						<div class="logo navbar-brand">
-							<a href="<?php echo home_url(); ?>">
-								<!-- svg logo - toddmotto.com/mastering-svg-use-for-a-retina-web-fallbacks-with-png-script -->
-								<img src="<?php echo get_template_directory_uri(); ?>/img/logo.svg" alt="Logo" class="logo-img">
-							</a>
-						</div>
-						<!-- /logo -->
+						<!-- nav -->
+						<nav class="navbar navbar-toggleable-md navbar-light bg-faded" role="navigation">
+							<button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#main-menu" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+								<span class="navbar-toggler-icon"></span>
+							</button>
 
-						<div class="collapse navbar-collapse pull-right" id="main-menu">
-							<?php html5blank_nav(); ?>
-						</div>
-					</nav>
-					<!-- /nav -->
+							<!-- logo -->
+							<div class="logo navbar-brand">
+								<a href="<?php echo home_url(); ?>">
+									<!-- svg logo - toddmotto.com/mastering-svg-use-for-a-retina-web-fallbacks-with-png-script -->
+									<img src="<?php echo get_template_directory_uri(); ?>/img/logo.svg" alt="Logo" class="logo-img">
+								</a>
+							</div>
+							<!-- /logo -->
 
-			</header>
-			<!-- /header -->
+							<div class="collapse navbar-collapse pull-right" id="main-menu">
+								<?php html5blank_nav(); ?>
+							</div>
+						</nav>
+						<!-- /nav -->
+
+				</header>
+				<!-- /header -->

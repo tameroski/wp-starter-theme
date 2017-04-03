@@ -30,23 +30,26 @@
 		<div class="container">
 
 			<!-- header -->
-			<header class="header clear navbar navbar-toggleable-md navbar-light bg-faded" role="banner">
-
-					<!-- logo -->
-					<div class="logo navbar-header">
-						<a href="<?php echo home_url(); ?>">
-							<!-- svg logo - toddmotto.com/mastering-svg-use-for-a-retina-web-fallbacks-with-png-script -->
-							<img src="<?php echo get_template_directory_uri(); ?>/img/logo.svg" alt="Logo" class="logo-img">
-						</a>
-					</div>
-					<!-- /logo -->
+			<header class="header clear" role="banner">
 
 					<!-- nav -->
-					<nav class="collapse navbar-collapse" role="navigation">
-						<button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+					<nav class="navbar navbar-toggleable-md navbar-light bg-faded" role="navigation">
+						<button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#main-menu" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
 							<span class="navbar-toggler-icon"></span>
 						</button>
-						<?php html5blank_nav(); ?>
+
+						<!-- logo -->
+						<div class="logo navbar-brand">
+							<a href="<?php echo home_url(); ?>">
+								<!-- svg logo - toddmotto.com/mastering-svg-use-for-a-retina-web-fallbacks-with-png-script -->
+								<img src="<?php echo get_template_directory_uri(); ?>/img/logo.svg" alt="Logo" class="logo-img">
+							</a>
+						</div>
+						<!-- /logo -->
+
+						<div class="collapse navbar-collapse pull-right" id="main-menu">
+							<?php html5blank_nav(); ?>
+						</div>
 					</nav>
 					<!-- /nav -->
 

@@ -25,7 +25,8 @@
 				}
 		    },
 		    onAfter: function($container) {
-		    	// Plugin can reload here
+		    	// Plugins can be reloaded here, like this :
+		    	// $('div.wpcf7 > form').wpcf7InitForm();
 		    }
 		}).data("smoothState");
 			
